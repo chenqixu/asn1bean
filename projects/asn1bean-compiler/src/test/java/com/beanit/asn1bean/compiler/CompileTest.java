@@ -204,4 +204,46 @@ public class CompileTest {
         };
     Compiler.main(args);
   }
+
+  @Test
+  public void testCdr() throws Exception {
+    args =
+            new String[] {
+                    "-dv",
+                    "-e",
+                    "-o",
+                    GENERATED_SRC_DIR,
+                    "-p",
+                    ROOT_PACKAGE_NAME,
+                    "-f",
+                    "src/test/resources/cdr.asn"
+            };
+    Compiler.main(args);
+  }
+
+  @Test
+  public void testIMSChargingDataTypes() throws Exception {
+    args =
+            new String[] {
+                    "-dv",
+                    "-e",
+                    "-o",
+                    GENERATED_SRC_DIR,
+                    "-p",
+                    ROOT_PACKAGE_NAME,
+                    "-f",
+                    "src/test/resources/cdr/IMSChargingDataTypes.asn",
+                    "src/test/resources/cdr/GenericChargingDataTypes.asn",
+                    "src/test/resources/cdr/MAP-CommonDataTypes.asn",
+                    "src/test/resources/cdr/MAP-ER-DataTypes.asn",
+                    "src/test/resources/cdr/MAP-SS-Code.asn",
+                    "src/test/resources/cdr/MAP-SS-DataTypes.asn",
+                    "src/test/resources/cdr/MAP-ExtensionDataTypes.asn",
+                    "src/test/resources/cdr/MAP-TS-Code.asn",
+                    "src/test/resources/cdr/MAP-BS-Code.asn",
+                    "src/test/resources/cdr/Remote-Operation-Notation.asn",
+                    "src/test/resources/cdr/CMIP-1.asn"
+            };
+    Compiler.main(args);
+  }
 }
